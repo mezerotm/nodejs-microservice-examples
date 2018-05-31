@@ -1,0 +1,40 @@
+{
+  "name": "seneca-mongo",
+  "version": "1.0.0",
+  "description": "mongodb middleware service",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "standard --fix --verbose | snazzy"
+    }
+  },
+  "keywords": [
+    "seneca",
+    "mongodb"
+  ],
+  "author": "Carlos Rincon <mezerotm@gmail.com>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mezerotm/seneca-mongo"
+  },
+  "dependencies": {
+    "seneca": "^3.6.0",
+    "seneca-entity": "^2.2.0",
+    "seneca-mongo-store": "^1.1.0"
+  },
+  "devDependencies": {
+    "husky": "^1.0.0-rc.8",
+    "nodemon": "^1.17.5",
+    "snazzy": "^7.1.1",
+    "standard": "^11.0.1"
+  },
+  "standard": {
+    "ignore": [
+      "node_modules/"
+    ]
+  }
+}

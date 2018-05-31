@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  mongodb:
+    restart: always
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+  micro-mongo:
+    depends_on:
+      - mongodb
+    build: ./micro-mongo
+    ports:
+      - "8000:3000"
+    volumes:
+      - ./micro-mongo:/app
+#  express-mongo:
+#      depends_on:
+#        - mongodb
+#      build: ./express-mongo
+#      ports:
+#        - "8001:8000"
+#      volumes:
+#        - ./express-mongo:/app
+#  seneca-mongo:
+#    depends_on:
+#      - mongodb
+#    build: ./seneca-mongo
+#    ports:
+#      - "8001:8000"
+#    volumes:
+#      - ./seneca-mongo:/app
+
